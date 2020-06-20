@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Morning",
+    "text": "Get up at 7 am"
+  },
+  {
+    "id": 3,
+    "title": "Evening",
+    "text": "Go for a walk"
+  },
+  {
+    "id": 4,
+    "title": "Night",
+    "text": "Watch favorite movie at 9 pm"
+  }
+]
