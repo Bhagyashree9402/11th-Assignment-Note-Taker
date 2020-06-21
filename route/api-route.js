@@ -47,12 +47,8 @@ router.post("/api/notes",async(req,res)=>{
     
    note= note.filter(function (value,index){
         console.log(value);
-        // if (value.id == deletenote){
-        //      note.splice(index,1);
-        // }
         return (value.id != deletenote)
-        
-    });
+         });
     console.log(note);
     await writeFileAsync("./db/db.json",JSON.stringify(note,null,2));
     res.json(note);
