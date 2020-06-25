@@ -21,9 +21,17 @@ router.get("/api/notes",async(req,res)=>{
 router.post("/api/notes",async(req,res)=>{
     let note = await readFileAsync("./db/db.json","utf-8");
     note=JSON.parse(note);
-
+     let highestId=0;
+    note.forEach(function(item,index,arr){
+        console.log(item.id);
+        
+    if(item.id>highestId)
+    {
+        highestId=item.id;
+    }
+    });
     const newnote=req.body;
-    newnote.id=note.length+1;
+    newnote.id=highestId+1;
     note.push(newnote);
 
     await writeFileAsync("./db/db.json",JSON.stringify(note,null,2));
